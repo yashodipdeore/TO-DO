@@ -5,10 +5,26 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Add Task</title>
+  <link rel="stylesheet" href="/style.css">
+
 </head>
 
 <body>
-  <h1>Add Task Page</h1>
+  <%- include('navbar')%>
+    <h1>Add Task Page</h1>
+
+    <div>
+      <form action="/add" method="post">
+        <input type="text" placeholder="Enter Task Title">
+        <br><br>
+
+        <textarea name="description" id="">
+
+        </textarea>
+        <br>
+        <button>Add New Task</button>
+      </form>
+    </div>
 </body>
 
 </html>

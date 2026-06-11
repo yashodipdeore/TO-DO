@@ -1,0 +1,328 @@
+/* ==========================================
+   GLOBAL RESET
+========================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ==========================================
+   BODY
+========================================== */
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f4f6f9;
+  color: #333;
+  min-height: 100vh;
+  padding: 30px;
+}
+
+/* ==========================================
+   HEADINGS
+========================================== */
+
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #222;
+  font-size: 2rem;
+}
+
+/* ==========================================
+   NAVIGATION
+========================================== */
+
+nav {
+  background-color: #1f2937;
+  border-radius: 10px;
+  margin-bottom: 30px;
+  padding: 15px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+nav li {
+  display: inline-block;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+  padding: 10px 18px;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  background-color: #374151;
+}
+
+/* ==========================================
+   PAGE CONTAINER
+========================================== */
+
+.container {
+  max-width: 900px;
+  margin: auto;
+}
+
+/* ==========================================
+   FORM STYLING
+========================================== */
+
+form {
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.08);
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="date"],
+textarea,
+select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  outline: none;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: #2563eb;
+}
+
+/* ==========================================
+   BUTTONS
+========================================== */
+
+button {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 15px;
+  transition: 0.3s;
+}
+
+.btn-primary {
+  background-color: #2563eb;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #1d4ed8;
+}
+
+.btn-success {
+  background-color: #16a34a;
+  color: white;
+}
+
+.btn-success:hover {
+  background-color: #15803d;
+}
+
+.btn-danger {
+  background-color: #dc2626;
+  color: white;
+}
+
+.btn-danger:hover {
+  background-color: #b91c1c;
+}
+
+/* ==========================================
+   TASK LIST
+========================================== */
+
+.task-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.task-card {
+  background: white;
+  padding: 18px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.08);
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.task-info h3 {
+  margin-bottom: 5px;
+}
+
+.task-info p {
+  color: #666;
+}
+
+.task-actions {
+  display: flex;
+  gap: 10px;
+}
+
+/* ==========================================
+   TABLE
+========================================== */
+
+table {
+  width: 100%;
+  background: white;
+  border-collapse: collapse;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+th {
+  background: #2563eb;
+  color: white;
+  padding: 15px;
+}
+
+td {
+  padding: 15px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+tr:hover {
+  background: #f9fafb;
+}
+
+/* ==========================================
+   SEARCH BAR
+========================================== */
+
+.search-box {
+  margin-bottom: 20px;
+}
+
+.search-box input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+/* ==========================================
+   STATUS BADGES
+========================================== */
+
+.badge {
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.pending {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.completed {
+  background: #dcfce7;
+  color: #166534;
+}
+
+/* ==========================================
+   CARD
+========================================== */
+
+.card {
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.08);
+}
+
+/* ==========================================
+   ALERTS
+========================================== */
+
+.alert-success {
+  background: #dcfce7;
+  color: #166534;
+  padding: 12px;
+  border-radius: 6px;
+  margin-bottom: 15px;
+}
+
+.alert-error {
+  background: #fee2e2;
+  color: #991b1b;
+  padding: 12px;
+  border-radius: 6px;
+  margin-bottom: 15px;
+}
+
+/* ==========================================
+   FOOTER
+========================================== */
+
+footer {
+  text-align: center;
+  margin-top: 40px;
+  color: #666;
+}
+
+/* ==========================================
+   RESPONSIVE DESIGN
+========================================== */
+
+@media (max-width: 768px) {
+
+  body {
+    padding: 15px;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  nav a {
+    display: block;
+    text-align: center;
+  }
+
+  .task-card {
+    flex-direction: column;
+    gap: 15px;
+    align-items: flex-start;
+  }
+
+  .task-actions {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  table {
+    display: block;
+    overflow-x: auto;
+  }
+}
