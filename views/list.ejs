@@ -13,25 +13,37 @@
 
     <div class="container">
       <h1>Task Listing Page</h1>
+      <form action="/multi-delete" method="post">
+        <button type="submit" class="delete-items"> Delete Selected Tasks</button>
+        <div class="task-list">
+          <ol>
 
-      <div class="task-list">
-        <% for(let i=0; i < result.length; i++) { %>
-          <div class="task-card">
-            <div class="task-info">
-              <h3>
-                <%= result[i].title %>
-              </h3>
-              <p>
-                <%= result[i].description %>
-              </p>
-              <a href="/delete/<%=result[i]._id%>" class="delete-item">Delete</a>
+            <% for(let i=0; i < result.length; i++) { %>
+              <li>
 
-              <a href="/update/<%=result[i]._id%>" class="update-item">Update</a>
-            </div>
-          </div>
-          <% } %>
-      </div>
+                <div class="task-card">
+                  <div class="task-info">
 
+                    <h3>
+                      <%= result[i].title %>
+                    </h3>
+                    <p>
+                      <%= result[i].description %>
+                    </p>
+
+                    <input type="checkbox" name="selectedTasks" value="<%= result[i]._id %>">
+                    <a href="/delete/<%=result[i]._id%>" class="delete-item">Delete</a>
+
+                    <a href="/update/<%=result[i]._id%>" class="update-item">Update</a>
+
+                  </div>
+                </div>
+              </li>
+              <% } %>
+          </ol>
+        </div>
+
+      </form>
     </div>
 </body>
 

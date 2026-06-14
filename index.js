@@ -53,7 +53,6 @@ app.get('/update/:id', async (req, res) => {
   const collection = db.collection(collectionName);
   const result = await collection.findOne({ _id: new ObjectId(id) });
 
-  console.log(result);
   res.render('update', { result });
 });
 
@@ -111,6 +110,26 @@ app.post('/update/:id', async (req, res) => {
   };
 });
 
+
+
+app.post('/multi-delete', async (req, res) => {
+  const ids = req.body.selectedTasks;
+  const ObjectIds = ids.map(id => new ObjectId(id));
+
+  const db = await connection();
+  const collection = db.collection(collectionName);
+  console.log(ids);
+
+  const result = await collection.deleteMany({
+    _id: { $in: ObjectIds }
+  });
+
+  if (result) {
+    res.redirect('/');
+  } else {
+    res.send("Cannot update task !");
+  };
+});
 
 //===============================================
 const PORT = 3000;
