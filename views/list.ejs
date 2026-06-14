@@ -9,8 +9,28 @@
 </head>
 
 <body>
-  <%- include('navbar')%>
-    <h1>Task listing Page</h1>
+  <%- include('navbar') %>
+
+    <div class="container">
+      <h1>Task Listing Page</h1>
+
+      <div class="task-list">
+        <% for(let i=0; i < result.length; i++) { %>
+          <div class="task-card">
+            <div class="task-info">
+              <h3>
+                <%= result[i].title %>
+              </h3>
+              <p>
+                <%= result[i].description %>
+              </p>
+              <a href="/delete/<%=result[i]._id%>" class="delete-item">Delete</a>
+            </div>
+          </div>
+          <% } %>
+      </div>
+
+    </div>
 </body>
 
 </html>

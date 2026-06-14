@@ -326,3 +326,89 @@ footer {
     overflow-x: auto;
   }
 }
+
+
+/* ==========================================
+   TASK LIST PAGE
+========================================== */
+
+.task-list {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.task-card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  border-left: 6px solid #2563eb;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.task-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+}
+
+.task-info h3 {
+  font-size: 1.3rem;
+  color: #111827;
+  margin-bottom: 10px;
+}
+
+.task-info p {
+  color: #6b7280;
+  line-height: 1.6;
+}
+
+/* Empty State */
+
+.no-task {
+  background: white;
+  padding: 25px;
+  text-align: center;
+  border-radius: 10px;
+  color: #6b7280;
+  font-size: 18px;
+}
+
+/* Responsive */
+
+@media (max-width: 768px) {
+  .task-card {
+    padding: 15px;
+  }
+
+  .task-info h3 {
+    font-size: 1.1rem;
+  }
+}
+
+
+/* Delete Button */
+
+.delete-item {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 8px 16px;
+  background-color: #dc2626;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.delete-item:hover {
+  background-color: #b91c1c;
+  transform: translateY(-2px);
+}
+
+.delete-item:active {
+  transform: scale(0.98);
+}
