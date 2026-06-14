@@ -3,6 +3,7 @@ import path from 'path'
 import { MongoClient, ObjectId } from 'mongodb';
 import { connect } from 'http2';
 import { url } from 'inspector';
+import { connected, title } from 'process';
 
 
 //==============================================
@@ -34,7 +35,6 @@ app.get('/', async (req, res) => {
   const collection = db.collection(collectionName);
 
   const result = await collection.find().toArray();
-  console.log(result);
 
   res.render('list', { result });
 
@@ -45,9 +45,18 @@ app.get('/add', (req, res) => {
   res.render('add');
 });
 
-app.get('/update', (req, res) => {
-  res.render('update');
+
+app.get('/update/:id', async (req, res) => {
+  const id = req.params.id;
+
+  const db = await connection();
+  const collection = db.collection(collectionName);
+  const result = await collection.findOne({ _id: new ObjectId(id) });
+
+  console.log(result);
+  res.render('update', { result });
 });
+
 
 
 app.get("/delete/:id", async (req, res) => {
@@ -66,7 +75,6 @@ app.get("/delete/:id", async (req, res) => {
 app.post('/add', async (req, res) => {
   const db = await connection();
   const collection = db.collection(collectionName);
-  console.log(req.body);
 
   const result = collection.insertOne(req.body);
   if (result) {
@@ -77,8 +85,30 @@ app.post('/add', async (req, res) => {
 
 });
 
-app.post('/update', (req, res) => {
-  res.redirect('/');
+app.post('/update/:id', async (req, res) => {
+  const { title, description } = req.body;
+  const id = req.params.id;
+
+  const db = await connection();
+  const collection = db.collection(collectionName);
+
+  const result = await collection.updateOne(
+    {
+      _id: new ObjectId(id)
+    },
+    {
+      $set: {
+        title: title,
+        description: description
+      }
+    }
+  );
+
+  if (result) {
+    res.redirect('/');
+  } else {
+    res.send("Cannot update task !");
+  };
 });
 
 

@@ -6,26 +6,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Update Task</title>
   <link rel="stylesheet" href="/style.css">
-
 </head>
 
 <body>
-  <%- include('navbar')%>
+  <%- include('navbar') %>
+
     <h1>Update Task Page</h1>
 
     <div>
-      <form action="/update" method="post">
-        <input type="text" placeholder="Enter Task Title">
+      <form action="/update/<%=result._id%>" method="post">
+        <input type="text" name="title" value="<%= result.title %>">
+
         <br><br>
 
-        <textarea name="description" id="">
+        <textarea name="description"><%= result.description %></textarea>
 
-        </textarea>
-        <br>
-        <button>Update Task</button>
+        <br><br>
+
+        <button type="submit">Update Task</button>
       </form>
     </div>
-
 
 </body>
 

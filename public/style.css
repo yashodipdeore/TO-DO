@@ -412,3 +412,26 @@ footer {
 .delete-item:active {
   transform: scale(0.98);
 }
+
+
+.update-item {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 8px 16px;
+  background-color: #66dd51;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.update-item:hover {
+  background-color: #03fd67;
+  transform: translateY(-2px);
+}
+
+.update-item:active {
+  transform: scale(0.98);
+}
